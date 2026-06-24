@@ -2,7 +2,7 @@
 
 Repositorio educativo para tutorias de programacion con Java. El objetivo es construir, clase a clase, un sistema academico por consola mientras el alumno aprende Java, POO, arquitectura por capas, Git, SQL, MySQL Workbench y JDBC.
 
-Esta rama `starter` es el punto de partida para que el alumno practique. Contiene la estructura base, `Main.java`, documentacion y plan de clases. El alumno debe crear progresivamente las clases del sistema academico durante las tutorias.
+Esta rama funciona como repo del curso/tutor. Contiene la estructura base, `Main.java`, documentacion y lecciones progresivas. El alumno puede crear su propio repositorio desde cero siguiendo las lecciones, sin depender de clonar este repo.
 
 ## Proyecto
 
@@ -42,6 +42,7 @@ Los pasos de instalacion y desinstalacion estan en `docs/00-instalacion.md`.
 java-poo-mysql-lab/
 ├── README.md
 ├── docs/
+├── lessons/
 ├── database/
 ├── src/
 │   ├── main/java/com/tutoria/sistemaacademico/
@@ -72,6 +73,17 @@ Desde NetBeans:
 2. Revisar que exista `pom.xml`.
 3. Abrir `src/main/java/com/tutoria/sistemaacademico/Main.java`.
 4. Ejecutar el proyecto.
+
+## Como usar las lecciones
+
+Cada carpeta en `lessons/` representa una clase del curso y apunta al mismo objetivo: construir el sistema academico por consola.
+
+Cada leccion incluye:
+
+- `teoria.md`: conceptos que el tutor explica antes de programar.
+- `ejemplo-tutor.md`: ejemplo que el tutor desarrolla frente al alumno.
+- `practica-alumno.md`: actividad que el alumno implementa en su propio repo.
+- `reto.md`: tarea para casa o practica independiente.
 
 ## Como probar
 
@@ -108,7 +120,7 @@ En `starter`, estas carpetas existen como estructura de aprendizaje. Las clases 
 7. MySQL Workbench.
 8. JDBC.
 
-Cada leccion debe incluir definiciones, teoria breve, ejemplo guiado, practica, revision y reto para casa. El mapa de clases y casos practicos esta en `docs/08-plan-de-clases.md`.
+Cada leccion debe incluir definiciones, teoria breve, ejemplo guiado, practica, revision y reto para casa. El mapa de clases y casos practicos esta en `docs/08-plan-de-clases.md` y el material clase por clase esta en `lessons/`.
 
 ## Estrategia de ramas
 
@@ -119,4 +131,4 @@ Cada leccion debe incluir definiciones, teoria breve, ejemplo guiado, practica, 
 
 La version `starter` no entrega la solucion. La solucion completa esta en la rama `solution` para revision del tutor.
 
-Si sos alumno, trabajá desde esta rama en tu propio repositorio o fork. No trabajes directamente sobre el repo del tutor.
+Si sos alumno, lo ideal es crear tu propio repositorio y avanzar clase a clase. Este repo sirve como guia del curso y referencia del tutor.

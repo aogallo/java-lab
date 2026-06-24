@@ -2,7 +2,7 @@
 
 Repositorio educativo para tutorias de programacion con Java. El objetivo es construir, clase a clase, un sistema academico por consola mientras el alumno aprende Java, POO, arquitectura por capas, Git, SQL, MySQL Workbench y JDBC.
 
-Esta rama `starter` es el punto de partida para que el alumno practique. Contiene estructura, documentacion y TODOs, pero no entrega la solucion completa.
+Esta rama `starter` es el punto de partida para que el alumno practique. Contiene la estructura base, `Main.java`, documentacion y plan de clases. El alumno debe crear progresivamente las clases del sistema academico durante las tutorias.
 
 ## Proyecto
 
@@ -95,6 +95,8 @@ view -> controller -> service -> repository -> model
 - `repository`: acceso a datos.
 - `model`: clases del dominio.
 
+En `starter`, estas carpetas existen como estructura de aprendizaje. Las clases se crean durante las lecciones.
+
 ## Ruta de aprendizaje
 
 1. Instalacion de herramientas.
@@ -106,7 +108,7 @@ view -> controller -> service -> repository -> model
 7. MySQL Workbench.
 8. JDBC.
 
-Cada leccion debe incluir definiciones, teoria breve, ejemplo guiado, practica, revision y reto para casa.
+Cada leccion debe incluir definiciones, teoria breve, ejemplo guiado, practica, revision y reto para casa. El mapa de clases y casos practicos esta en `docs/08-plan-de-clases.md`.
 
 ## Estrategia de ramas
 
@@ -115,6 +117,6 @@ Cada leccion debe incluir definiciones, teoria breve, ejemplo guiado, practica, 
 - `solution`: version completa para revision del tutor.
 - `lesson/*`: checkpoints por tema cuando haga falta.
 
-La version `starter` no debe entregar toda la solucion antes de que el alumno intente resolver el ejercicio.
+La version `starter` no entrega la solucion. La solucion completa esta en la rama `solution` para revision del tutor.
 
 Si sos alumno, trabajá desde esta rama en tu propio repositorio o fork. No trabajes directamente sobre el repo del tutor.

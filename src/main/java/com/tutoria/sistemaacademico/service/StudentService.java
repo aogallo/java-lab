@@ -14,6 +14,7 @@ public class StudentService {
     }
 
     public Student createStudent(String firstName, String lastName, String email) {
+        // TODO: Keep these validations, then explain why service owns business rules.
         validateText(firstName, "El nombre es obligatorio.");
         validateText(lastName, "El apellido es obligatorio.");
         validateText(email, "El email es obligatorio.");
@@ -23,6 +24,7 @@ public class StudentService {
     }
 
     public List<Student> listStudents() {
+        // TODO: Complete repository behavior in InMemoryStudentRepository.
         return studentRepository.findAll();
     }
 
@@ -32,6 +34,7 @@ public class StudentService {
     }
 
     public boolean updateStudent(int id, String firstName, String lastName, String email) {
+        // TODO: Explain update as replacing the state of an existing object.
         validateId(id);
         validateText(firstName, "El nombre es obligatorio.");
         validateText(lastName, "El apellido es obligatorio.");
@@ -42,6 +45,7 @@ public class StudentService {
     }
 
     public boolean deleteStudent(int id) {
+        // TODO: Explain delete as removing an item from a collection.
         validateId(id);
         return studentRepository.deleteById(id);
     }

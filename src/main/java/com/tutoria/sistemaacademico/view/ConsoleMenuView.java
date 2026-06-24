@@ -1,10 +1,6 @@
 package com.tutoria.sistemaacademico.view;
 
-import com.tutoria.sistemaacademico.controller.AcademicController;
 import com.tutoria.sistemaacademico.controller.StudentController;
-import com.tutoria.sistemaacademico.model.Course;
-import com.tutoria.sistemaacademico.model.Enrollment;
-import com.tutoria.sistemaacademico.model.Grade;
 import com.tutoria.sistemaacademico.model.Student;
 
 import java.util.List;
@@ -13,12 +9,10 @@ import java.util.Scanner;
 
 public class ConsoleMenuView {
     private final StudentController studentController;
-    private final AcademicController academicController;
     private final Scanner scanner;
 
-    public ConsoleMenuView(StudentController studentController, AcademicController academicController) {
+    public ConsoleMenuView(StudentController studentController) {
         this.studentController = studentController;
-        this.academicController = academicController;
         this.scanner = new Scanner(System.in);
     }
 
@@ -40,11 +34,7 @@ public class ConsoleMenuView {
         System.out.println("3. Buscar estudiante por ID");
         System.out.println("4. Actualizar estudiante");
         System.out.println("5. Eliminar estudiante");
-        System.out.println("6. Crear curso");
-        System.out.println("7. Listar cursos");
-        System.out.println("8. Inscribir estudiante en curso");
-        System.out.println("9. Registrar nota");
-        System.out.println("10. Consultar reporte basico");
+        System.out.println("6. Ver proximos retos");
         System.out.println("0. Salir");
     }
 
@@ -67,19 +57,7 @@ public class ConsoleMenuView {
                     deleteStudent();
                     break;
                 case 6:
-                    createCourse();
-                    break;
-                case 7:
-                    listCourses();
-                    break;
-                case 8:
-                    enrollStudent();
-                    break;
-                case 9:
-                    registerGrade();
-                    break;
-                case 10:
-                    showBasicReport();
+                    showNextChallenges();
                     break;
                 case 0:
                     System.out.println("Hasta luego.");
@@ -153,55 +131,13 @@ public class ConsoleMenuView {
         }
     }
 
-    private void createCourse() {
-        System.out.println("\nCrear curso");
-        String name = readText("Nombre del curso: ");
-        String description = readText("Descripcion: ");
-
-        Course course = academicController.createCourse(name, description);
-        System.out.println("Curso creado: " + course.showInfo());
-    }
-
-    private void listCourses() {
-        System.out.println("\nListado de cursos");
-        List<Course> courses = academicController.listCourses();
-
-        if (courses.isEmpty()) {
-            System.out.println("No hay cursos registrados.");
-            return;
-        }
-
-        for (Course course : courses) {
-            System.out.println(course.showInfo());
-        }
-    }
-
-    private void enrollStudent() {
-        System.out.println("\nInscribir estudiante en curso");
-        int studentId = readInt("ID del estudiante: ");
-        int courseId = readInt("ID del curso: ");
-
-        Enrollment enrollment = academicController.enrollStudent(studentId, courseId);
-        System.out.println("Inscripcion creada con ID " + enrollment.getId() + ".");
-    }
-
-    private void registerGrade() {
-        System.out.println("\nRegistrar nota");
-        int enrollmentId = readInt("ID de la inscripcion: ");
-        double score = readDouble("Nota de 0 a 20: ");
-        String description = readText("Descripcion: ");
-
-        Grade grade = academicController.registerGrade(enrollmentId, score, description);
-        System.out.println("Nota registrada con ID " + grade.getId() + ".");
-    }
-
-    private void showBasicReport() {
-        System.out.println("\nReporte basico");
-        List<String> reportLines = academicController.buildBasicReport();
-
-        for (String reportLine : reportLines) {
-            System.out.println(reportLine);
-        }
+    private void showNextChallenges() {
+        System.out.println("\nProximos retos del alumno:");
+        System.out.println("- Completar el repositorio en memoria");
+        System.out.println("- Crear cursos");
+        System.out.println("- Inscribir estudiantes");
+        System.out.println("- Registrar notas");
+        System.out.println("- Conectar con MySQL usando JDBC");
     }
 
     private String readText(String label) {
@@ -222,16 +158,4 @@ public class ConsoleMenuView {
         }
     }
 
-    private double readDouble(String label) {
-        while (true) {
-            System.out.print(label);
-            String value = scanner.nextLine();
-
-            try {
-                return Double.parseDouble(value);
-            } catch (NumberFormatException exception) {
-                System.out.println("Debes escribir un numero decimal.");
-            }
-        }
-    }
 }

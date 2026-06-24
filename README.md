@@ -2,6 +2,8 @@
 
 Repositorio educativo para tutorias de programacion con Java. El objetivo es construir, clase a clase, un sistema academico por consola mientras el alumno aprende Java, POO, arquitectura por capas, Git, SQL, MySQL Workbench y JDBC.
 
+Esta rama `starter` es el punto de partida para que el alumno practique. Contiene estructura, documentacion y TODOs, pero no entrega la solucion completa.
+
 ## Proyecto
 
 Sistema Academico Java
@@ -106,7 +108,7 @@ view -> controller -> service -> repository -> model
 
 Cada leccion debe incluir definiciones, teoria breve, ejemplo guiado, practica, revision y reto para casa.
 
-## Estrategia de ramas sugerida
+## Estrategia de ramas
 
 - `main`: referencia estable del proyecto.
 - `starter`: version inicial para que el alumno practique.
@@ -114,3 +116,5 @@ Cada leccion debe incluir definiciones, teoria breve, ejemplo guiado, practica, 
 - `lesson/*`: checkpoints por tema cuando haga falta.
 
 La version `starter` no debe entregar toda la solucion antes de que el alumno intente resolver el ejercicio.
+
+Si sos alumno, trabajá desde esta rama en tu propio repositorio o fork. No trabajes directamente sobre el repo del tutor.

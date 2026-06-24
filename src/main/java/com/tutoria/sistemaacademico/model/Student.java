@@ -46,10 +46,12 @@ public class Student {
     }
 
     public String getFullName() {
+        // TODO: Explain string concatenation before asking the student to modify this method.
         return firstName + " " + lastName;
     }
 
     public String showInfo() {
+        // TODO: Ask the student to format this output after explaining methods and return values.
         return "ID: " + id + " | Nombre: " + getFullName() + " | Email: " + email;
     }
 }

@@ -1,0 +1,20 @@
+# Build output
+target/
+
+# OS files
+.DS_Store
+
+# IDE files
+.idea/
+.vscode/
+nbproject/private/
+
+# OpenCode/OpenSpec local workflow files
+.opencode/
+openspec/
+
+# Local agent registry/cache
+.atl/
+
+# Logs
+*.log
